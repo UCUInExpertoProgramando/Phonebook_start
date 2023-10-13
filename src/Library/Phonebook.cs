@@ -41,5 +41,15 @@ namespace Library
         {
             persons.Remove(contacto);
         }
+
+        public void SendMessage(string[] destinatarios, string texto)
+        {
+            WhatsAppChannel canal = new();
+            foreach(Contact destinatario in Search(destinatarios))
+            {
+                Message mensaje = canal.CreateMessage(Owner, destinatario, texto);
+                canal.Send(mensaje);
+            }
+        }
     }
 }
