@@ -1,23 +1,25 @@
 ﻿using System;
-using Library;
+using WhatsAppApiUCU;
 
-namespace Program
+namespace TuNombreDelProyecto
 {
     class Program
     {
         static void Main(string[] args)
         {
-            // Crear el contacto dueño
+            // Crea una instancia de WhatsAppApi
+            WhatsAppApi api = new WhatsAppApi();
 
-            // Crear la lista de contactos
+            // mensaje que envia
+            string mensaje = "Hola, este es un mensaje de prueba.";
 
-            // Agregar contactos a la lista
+            string numeroDestino = "+59896043449";
 
-            // Enviar un correo a algunos contactos
+            // Llama al método Send para enviar el mensaje
+            string resultado = api.Send(numeroDestino, mensaje);
 
-            // Enviar un WhatsApp a algunos contactos
+            Console.WriteLine(resultado);
 
-            // Enviar un SMS a algunos contactos
         }
     }
 }
